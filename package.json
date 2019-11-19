@@ -1,0 +1,30 @@
+{
+  "name": "@zhangfuxing/date",
+  "version": "0.1.0",
+  "description": "date library for nodejs",
+  "main": "./lib",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/index.test.js"
+  },
+  "keywords": [
+    "date",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuxingZhang/date.git"
+  },
+  "author": "Zhang Fu Xing <502545703@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fuxingZhang/date/issues"
+  },
+  "homepage": "https://github.com/fuxingZhang/date#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
