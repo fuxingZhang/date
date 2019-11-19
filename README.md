@@ -38,7 +38,7 @@ assert(new Dater('2019/1/1 0:10:10').getTimezoneOffset() === new Date('2019/1/1 
 
 ## Definitions  
 ```ts
-export class Dater extends Date{
+declare class Dater extends Date {
   /**
    * constructor
    * 
@@ -60,6 +60,8 @@ export class Dater extends Date{
    */
   toLocaleString(separator?: string): string;
 }
+
+export = Dater
 ```
 
 ## Test
