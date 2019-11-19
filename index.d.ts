@@ -1,20 +1,24 @@
 // Type definitions
 
-export interface Options {
-  param?: Date | dateString | timestamp,
-  separator?: string
+export class Dater extends Date{
+  /**
+   * constructor
+   * 
+   *  - `param` optional, Date | dateString | timestamp
+   */
+  constructor(param?: Date | string | number);
+
+  /**
+   * toLocaleString
+   * 
+   *  - `separator` optional, date separator, default '-
+   */
+  toLocaleString(separator?: string): string;
+
+  /**
+   * toLocaleString
+   * 
+   *  - `separator` optional, date separator, default '-
+   */
+  toLocaleString(separator?: string): string;
 }
-
-/**
- * toLocaleString
- *   - `param` Date or can be new Date() 
- *   - `separator` date separator, default: "-"
- */
-export function toLocaleString(option: options): Date
-
-/**
- * toLocaleDateString
- *   - `param` Date or can be new Date() 
- *   - `separator` date separator, default: "-"
- */
-export function toLocaleDateString(option: options): Date
