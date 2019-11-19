@@ -1,6 +1,6 @@
 // Type definitions
 
-export class Dater extends Date{
+declare class Dater extends Date {
   /**
    * constructor
    * 
@@ -22,3 +22,5 @@ export class Dater extends Date{
    */
   toLocaleString(separator?: string): string;
 }
+
+export = Dater
