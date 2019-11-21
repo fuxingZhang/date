@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const Dater = require('../lib');
+const Dater = require('../index');
 const util = require('util');
 
 describe('#indexOf()', function () {

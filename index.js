@@ -7,12 +7,8 @@ class Dater extends Date {
    * @constructor
    * @param {Date | dateString | timestamp} [param] 
    */
-  constructor(param) {
-    if (param === undefined) {
-      super();
-    } else {
-      super(param);
-    }
+  constructor() {
+    super(...arguments);
   }
 
   /**
