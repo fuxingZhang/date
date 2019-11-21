@@ -2,25 +2,18 @@
 
 declare class Dater extends Date {
   /**
-   * constructor
+   * Converts a date and time to a string
    * 
-   *  - `param` optional, Date | dateString | timestamp
-   */
-  constructor(param?: Date | string | number);
-
-  /**
-   * toLocaleString
-   * 
-   *  - `separator` optional, date separator, default '-
+   * @param separator optional, date separator, default '-
    */
   toLocaleString(separator?: string): string;
 
   /**
-   * toLocaleString
+   * Converts a date to a string
    * 
-   *  - `separator` optional, date separator, default '-
+   * @param separator optional, date separator, default '-
    */
-  toLocaleString(separator?: string): string;
+  toLocaleDateString(separator?: string): string;
 }
 
 export = Dater

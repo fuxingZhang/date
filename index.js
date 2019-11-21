@@ -5,14 +5,14 @@ const format = n => n > 9 ? n : `0${n}`;
 class Dater extends Date {
   /**
    * @constructor
-   * @param {Date | dateString | timestamp} [param] 
+   * @param {Date | dateString | timestamp} [args] 
    */
   constructor() {
     super(...arguments);
   }
 
   /**
-   * toLocaleString
+   *  Converts a date and time to a string
    * 
    * @param {String} [separator='-'] date separator
    */
@@ -27,7 +27,7 @@ class Dater extends Date {
   }
 
   /**
-   * toLocaleDateString
+   * Converts a date to a string
    * 
    * @param {String} [separator='-'] date separator
    */

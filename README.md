@@ -10,55 +10,53 @@ $ npm i @zhangfuxing/date
 ## Useage  
 
 ```js
-const Dater = require('@zhangfuxing/date');
 const assert = require('assert');
 const util = require('util');
+const Dater = require('@zhangfuxing/date');
 
-// toLocaleString
-assert(new Dater() instanceof Date === true);
-assert(util.types.isDate(new Dater()) === true);
-assert(new Dater('2019/1/1 0:10:10').toLocaleString() === '2019-01-01 00:10:10');
-assert(new Dater('2019/1/1 0:10:10').toLocaleString('.') === '2019.01.01 00:10:10');
-assert(new Dater('2019/1/1 0:10:10').toLocaleString('/') === '2019/01/01 00:10:10');
+describe('#indexOf()', function () {
+  it('instanceof and type should ok', async () => {
+    assert(new Dater() instanceof Date === true);
+    assert(util.types.isDate(new Dater()) === true);
+  });
 
-// toLocaleDateString
-assert(new Dater() instanceof Date === true);
-assert(util.types.isDate(new Dater()) === true);
-assert(new Dater('2019/1/1 0:10:10').toLocaleDateString() === '2019-01-01');
-assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('.') === '2019.01.01');
-assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('/') === '2019/01/01');
+  it('toLocaleString should ok', async () => {
+    assert(new Dater('2019/1/1 0:10:10').toLocaleString() === '2019-01-01 00:10:10');
+    assert(new Dater('2019/1/1 0:10:10').toLocaleString('.') === '2019.01.01 00:10:10');
+    assert(new Dater('2019/1/1 0:10:10').toLocaleString('/') === '2019/01/01 00:10:10');
+  });
+
+  it('toLocaleDateString should ok', async () => {
+    assert(new Dater('2019/1/1 0:10:10').toLocaleDateString() === '2019-01-01');
+    assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('.') === '2019.01.01');
+    assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('/') === '2019/01/01');
+  });
+
+  it('other methods on Date.prototype', async () => {
+    assert(new Dater().valueOf() === new Date().valueOf());
+    assert(new Dater().getFullYear() === new Date().getFullYear());
+    assert(new Dater('2019/1/1 0:10:10').getMilliseconds() === new Date('2019/1/1 0:10:10').getMilliseconds());
+    assert(new Dater('2019/1/1 0:10:10').getTimezoneOffset() === new Date('2019/1/1 0:10:10').getTimezoneOffset());
+  });
 });
-
-// Can use any method on Date.prototype
-assert(new Dater().valueOf() === new Date().valueOf());
-assert(new Dater().getFullYear() === new Date().getFullYear());
-assert(new Dater('2019/1/1 0:10:10').getMilliseconds() === new Date('2019/1/1 0:10:10').getMilliseconds());
-assert(new Dater('2019/1/1 0:10:10').getTimezoneOffset() === new Date('2019/1/1 0:10:10').getTimezoneOffset());
 ```  
 
 ## Definitions  
 ```ts
 declare class Dater extends Date {
   /**
-   * constructor
+   * Converts a date and time to a string
    * 
-   *  - `param` optional, Date | dateString | timestamp
-   */
-  constructor(param?: Date | string | number);
-
-  /**
-   * toLocaleString
-   * 
-   *  - `separator` optional, date separator, default '-
+   * @param separator optional, date separator, default '-
    */
   toLocaleString(separator?: string): string;
 
   /**
-   * toLocaleString
+   * Converts a date to a string
    * 
-   *  - `separator` optional, date separator, default '-
+   * @param separator optional, date separator, default '-
    */
-  toLocaleString(separator?: string): string;
+  toLocaleDateString(separator?: string): string;
 }
 
 export = Dater
