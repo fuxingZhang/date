@@ -4,7 +4,7 @@ const assert = require('assert');
 const Dater = require('../index');
 const util = require('util');
 
-describe('#indexOf()', function () {
+describe('Dater', function () {
   it('instanceof and type should ok', async () => {
     assert(new Dater() instanceof Date === true);
     assert(util.types.isDate(new Dater()) === true);
