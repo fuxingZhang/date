@@ -22,6 +22,10 @@ describe('Dater', function () {
     assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('/') === '2019/01/01');
   });
 
+  it('toLocaleTimeString should ok', async () => {
+    assert(new Dater('2019/1/1 0:10:10').toLocaleTimeString() === '00:10:10');
+  });
+
   it('other methods on Date.prototype', async () => {
     assert(new Dater().valueOf() === new Date().valueOf());
     assert(new Dater().getFullYear() === new Date().getFullYear());

@@ -32,6 +32,10 @@ describe('#indexOf()', function () {
     assert(new Dater('2019/1/1 0:10:10').toLocaleDateString('/') === '2019/01/01');
   });
 
+  it('toLocaleTimeString should ok', async () => {
+    assert(new Dater('2019/1/1 0:10:10').toLocaleTimeString() === '00:10:10');
+  });
+
   it('other methods on Date.prototype', async () => {
     assert(new Dater().valueOf() === new Date().valueOf());
     assert(new Dater().getFullYear() === new Date().getFullYear());
@@ -47,16 +51,21 @@ declare class Dater extends Date {
   /**
    * Converts a date and time to a string
    * 
-   * @param separator optional, date separator, default '-
+   * @param separator optional, date separator, default: "-"
    */
   toLocaleString(separator?: string): string;
 
   /**
    * Converts a date to a string
    * 
-   * @param separator optional, date separator, default '-
+   * @param separator optional, date separator, default: "-"
    */
   toLocaleDateString(separator?: string): string;
+
+  /**
+   * Converts a time to a string
+   */
+  toLocaleTimeString(separator?: string): string;
 }
 
 export = Dater

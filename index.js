@@ -37,6 +37,16 @@ class Dater extends Date {
     const day = format(this.getDate());
     return `${year}${separator}${month}${separator}${day}`;
   }
+
+  /**
+   * Converts a time to a string
+   */
+  toLocaleTimeString() {
+    const hour = format(this.getHours());
+    const minute = format(this.getMinutes());
+    const second = format(this.getSeconds());
+    return `${hour}:${minute}:${second}`;
+  }
 }
 
 module.exports = Dater
