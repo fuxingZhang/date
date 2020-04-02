@@ -1,6 +1,7 @@
 'use strict'
 
-const format = n => n > 9 ? n : `0${n}`;
+// const format = n => n > 9 ? n : `0${n}`;
+const format = n => n.toString().padStart(2, 0);
 
 class Dater extends Date {
   /**
